@@ -1,5 +1,7 @@
 import { useState, useEffect, useRef, useCallback } from "react";
 
+const B = import.meta.env.BASE_URL;
+
 /* ══════════════════════════════════════════════════════════
    NAËL SID-ALI — Portfolio Premium + Page BRITA
    ══════════════════════════════════════════════════════════ */
@@ -78,11 +80,11 @@ const D = {
     { id: 3, title: "Canal+ Reimagined", category: "Product & Vibecoding", description: "Pour me démarquer dans ma candidature chez Canal+, j'ai entièrement re-créé leur site web en vibecoding et imaginé deux nouvelles fonctionnalités : le Club+ revisité avec un espace commentaire sous chaque film, et le RO_BO+, une IA qui analyse les avis des spectateurs pour comprendre ce qu'ils ont réellement aimé et proposer des recommandations personnalisées.", tags: ["Vibecoding", "Product Design", "IA", "UX", "Streaming", "Innovation"], featured: true, url: "http://canalbynaelsidali.online" },
   ],
   photos: [
-    { id: 1, alt: "Singapour — Alstom", src: "/singapour.jpg" },
-    { id: 2, alt: "Paris Coffee Festival", src: "/pariscoffeefestival.jpg" },
-    { id: 3, alt: "IAE Aix-Marseille", src: "/iaeaixmaarseille.jpg" },
-    { id: 4, alt: "MDI Gurgaon — Inde", src: "/mdi inde.jpg" },
-    { id: 5, alt: "Événementiel BRITA", src: "/eventbrita.jpg" },
+    { id: 1, alt: "Singapour — Alstom", src: B + "singapour.jpg" },
+    { id: 2, alt: "Paris Coffee Festival", src: B + "pariscoffeefestival.jpg" },
+    { id: 3, alt: "IAE Aix-Marseille", src: B + "iaeaixmaarseille.jpg" },
+    { id: 4, alt: "MDI Gurgaon — Inde", src: B + "mdi inde.jpg" },
+    { id: 5, alt: "Événementiel BRITA", src: B + "eventbrita.jpg" },
     { id: 6, alt: "Projets Innovation", src: "" },
   ],
 };
@@ -278,7 +280,7 @@ function BritaPage({ onBack, t }) {
 
           <div style={{ display: "flex", alignItems: "center", gap: 16, marginBottom: 20 }}>
             <div style={{ width: 56, height: 56, borderRadius: 16, background: "rgba(255,255,255,.15)", display: "flex", alignItems: "center", justifyContent: "center", backdropFilter: "blur(8px)", overflow: "hidden" }}>
-              <img src="/BRITA_Logo.png" alt="BRITA Logo" style={{ width: "100%", height: "100%", objectFit: "contain", padding: 6 }} />
+              <img src={B + "BRITA_Logo.png"} alt="BRITA Logo" style={{ width: "100%", height: "100%", objectFit: "contain", padding: 6 }} />
             </div>
             <div>
               <p style={{ fontSize: 14, color: "rgba(255,255,255,.7)", fontWeight: 500 }}>Février — Juillet 2025 · Paris</p>
@@ -295,10 +297,10 @@ function BritaPage({ onBack, t }) {
           {/*  */}
           <div style={{ display: "grid", gridTemplateColumns: "repeat(auto-fit, minmax(200px, 1fr))", gap: 12, marginTop: 32, maxWidth: 600 }}>
             <div style={{ height: 140, borderRadius: 16, overflow: "hidden", border: "1px solid rgba(255,255,255,.1)" }}>
-              <img src="/Britastand.jpg" alt="Stand BRITA — Salon SETA" style={{ width: "100%", height: "100%", objectFit: "cover" }} />
+              <img src={B + "Britastand.jpg"} alt="Stand BRITA — Salon SETA" style={{ width: "100%", height: "100%", objectFit: "cover" }} />
             </div>
             <div style={{ height: 140, borderRadius: 16, overflow: "hidden", border: "1px solid rgba(255,255,255,.1)" }}>
-              <img src="/britabooth.png" alt="Paris Coffee Festival" style={{ width: "100%", height: "100%", objectFit: "cover" }} />
+              <img src={B + "britabooth.png"} alt="Paris Coffee Festival" style={{ width: "100%", height: "100%", objectFit: "cover" }} />
             </div>
           </div>
         </div>
@@ -443,9 +445,9 @@ function BritaPage({ onBack, t }) {
           <A delay={0.1}>
             <div style={{ display: "grid", gridTemplateColumns: "repeat(auto-fit,minmax(200px,1fr))", gap: 14, marginTop: 32 }}>
               {[
-                { src: "/NouvelleDA.png", alt: "Campagne « Drink better »" },
-                { src: "/Britastand.jpg", alt: "Stand BRITA — Salon" },
-                { src: "/brita-calculateur-de-CO2.png", alt: "Calculateur CO₂ BRITA" },
+                { src: B + "NouvelleDA.png", alt: "Campagne « Drink better »" },
+                { src: B + "Britastand.jpg", alt: "Stand BRITA — Salon" },
+                { src: B + "brita-calculateur-de-CO2.png", alt: "Calculateur CO₂ BRITA" },
               ].map((img, i) => (
                 <div key={i} style={{ height: 180, borderRadius: 16, overflow: "hidden", border: `1px solid ${t.bd}` }}>
                   <img src={img.src} alt={img.alt} style={{ width: "100%", height: "100%", objectFit: "cover" }} />
@@ -596,7 +598,7 @@ function LeakoPage({ onBack, t }) {
                   flex: 1, margin: "0 6px 6px", borderRadius: 22, overflow: "hidden",
                   position: "relative",
                 }}>
-                  <video src="/LEAKOV2 2.mp4" autoPlay muted loop playsInline style={{ width: "100%", height: "100%", objectFit: "cover" }} />
+                  <video src={B + "LEAKOV2 2.mp4"} autoPlay muted loop playsInline style={{ width: "100%", height: "100%", objectFit: "cover" }} />
                 </div>
 
                 {/* Home indicator */}
@@ -1079,7 +1081,7 @@ export default function Portfolio() {
           <div style={{ textAlign:"center",position:"relative",zIndex:2,maxWidth:800 }}>
             <div style={{ position:"relative",width:130,height:130,margin:"0 auto 28px",animation:"slideUp .8s .1s both" }}>
               <div style={{ position:"absolute",inset:-6,borderRadius:"50%",border:`2px solid ${t.ac}22`,animation:"spin3d 12s linear infinite" }}/>
-              <div style={{ width:130,height:130,borderRadius:"50%",border:`3px solid ${t.bd}`,boxShadow:`0 0 0 8px ${t.acS}, 0 10px 40px ${t.ac}22`,overflow:"hidden" }}><img src="/photos-de-profil.png" alt="Naël SID-ALI" style={{ width:"100%",height:"100%",objectFit:"cover" }} /></div>
+              <div style={{ width:130,height:130,borderRadius:"50%",border:`3px solid ${t.bd}`,boxShadow:`0 0 0 8px ${t.acS}, 0 10px 40px ${t.ac}22`,overflow:"hidden" }}><img src={B + "photos-de-profil.png"} alt="Naël SID-ALI" style={{ width:"100%",height:"100%",objectFit:"cover" }} /></div>
             </div>
             <p style={{ fontFamily:"'Satoshi',sans-serif",fontSize:15,fontWeight:600,color:t.ac,letterSpacing:".04em",marginBottom:14,animation:"slideUp .8s .2s both" }}>{D.title}</p>
             <h1 style={{ fontFamily:"'Satoshi',sans-serif",fontSize:"clamp(42px,8vw,78px)",fontWeight:900,lineHeight:1.02,letterSpacing:"-.045em",background:`linear-gradient(135deg,${t.tx} 0%,${t.txS} 50%,${t.ac} 100%)`,backgroundSize:"200% 200%",animation:"gradMove 8s ease infinite, slideUp .8s .3s both",WebkitBackgroundClip:"text",WebkitTextFillColor:"transparent",marginBottom:20 }}>{D.name}</h1>
